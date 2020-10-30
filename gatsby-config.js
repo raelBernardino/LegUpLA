@@ -32,6 +32,10 @@ module.exports = {
             variants: [`200`, `400`, `700`]
           },
           {
+            family: `Roboto Condensed`,
+            variants: [`200`, `400`, `700`]
+          },
+          {
             family: `Source Sans Pro`,
             variants: [`200`, `300`, `400`, `600`, `700`]
           },

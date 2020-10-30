@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { Container, Typography, variants } from '../atoms'
+import { Container, Typography, variants } from '../../atoms'
 
 const NavContainer = styled(Container)`
   position: fixed;
   top: 0;
   z-index: 2;
+  @media screen and (max-width: 800px) {
+  display: none;
+    /* display: block; */
+  }
 `;
 
 export const Nav = () => {

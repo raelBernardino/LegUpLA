@@ -9,6 +9,8 @@ import {
   buttonVariants,
   variants
 } from '../../atoms'
+import { useRecoilValue } from 'recoil'
+import { isMobileAtom } from '../../recoil/atoms'
 import volunteer1 from '../../images/volunteer1.jpg'
 import volunteer2 from '../../images/volunteer2.jpg'
 import volunteer3 from '../../images/volunteer3.jpg'
@@ -24,14 +26,21 @@ const TextContainer = styled.div`
 `;
 
 const NewsLetterContainer = styled(Container)`
+  height: ${p => p.isMobile && "auto"};
   > * {
     margin-bottom: 32px;
   }
 `
 
 export const Volunteer = () => {
+  const isMobile = useRecoilValue(isMobileAtom)
   return (
-    <Container id="volunteer" backgroundColor="#fff" padding="125px 175px 80px 175px">
+    <Container
+      flexDirection={isMobile && "column"}
+      id="volunteer"
+      backgroundColor="#fff"
+      height={isMobile ? "auto" : "100vh"}
+      padding={isMobile ? "0" : "125px 175px 80px 175px"}>
       <Container height="100%" flexDirection="column" jC="space-between">
         <Container height="auto" flexDirection="column" aI="flex-start">
           <Typography main {...variants.body} color="#FF7F11">VOLUNTEER</Typography>

@@ -4,7 +4,8 @@ export const Typography = styled.span`
   font-size: ${p => p.size || "12px"};
   font-weight: ${p => p.weight || 300};
   color: ${p => p.color || "black"};
-  font-family: ${p => p.main ? "Oswald" : "Source Sans Pro"};
+  font-family: ${p => p.main ? ("Oswald" || "Roboto") : "Source Sans Pro"};
+  text-align: center;
 `
 
 export const variants = {
@@ -30,6 +31,11 @@ export const variants = {
   },
   body: {
     size: "16px",
+    weight: "300",
+    color: "#fff",
+  },
+  caption: {
+    size: "12px",
     weight: "300",
     color: "#fff",
   }
